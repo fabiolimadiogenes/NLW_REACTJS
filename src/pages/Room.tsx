@@ -47,7 +47,7 @@ export function Room(){
                 name: user.name,
                 avatar: user.avatar,
             },
-            isHighLighted: false,
+            isHighlighted: false,
             isAnswered: false
         };
 
@@ -111,7 +111,10 @@ export function Room(){
                                 key={question.id}
                                 content={question.content}  
                                 author={question.author}
+                                isAnswered={question.isAnswered}
+                                isHishlighted={question.isHighlighted}
                             >
+                                {!question.isAnswered &&(
                                 <button
                                     className={`like-button ${question.likeId ? 'liked' : ''}`}
                                     type="button"
@@ -124,6 +127,7 @@ export function Room(){
                                     </svg>
 
                                 </button>
+                                )}
                             </Question>
                         )
                     })}
