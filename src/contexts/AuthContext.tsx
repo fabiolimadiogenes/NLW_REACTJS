@@ -1,4 +1,3 @@
-import { type } from "os";
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { auth, firebase } from "../services/firebase";
 
@@ -46,7 +45,7 @@ export function AuthContextProvider(props: AuthContextProviderProviderProps){
     }, [])
   
   async function signInWithGoogle(){
-      const provider = new firebase.auth.GoogleAuthProvider
+      const provider = new firebase.auth.GoogleAuthProvider()
   
       const result = await auth.signInWithPopup(provider)
   
